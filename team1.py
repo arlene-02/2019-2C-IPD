@@ -1,3 +1,4 @@
+import random
 ####
 # Each team's file must define four tokens:
 #     team_name: a string
@@ -7,8 +8,8 @@
 ####
 
 team_name = 'Fake News' # Only 10 chars displayed.
-strategy_name = 'The name the team gives to this strategy'
-strategy_description = 'How does this strategy decide?'
+strategy_name = 'Buzzfeed+Vox'
+strategy_description = 'We will make our code choose a random choice for the first round.Then it will procced to look back on the enemys last choice. Then it will infer a choice based upon the enemys choices, until the 100th round it will then betray no matter what until the end.'
     
 def move(my_history, their_history, my_score, their_score):
     ''' Arguments accepted: my_history, their_history are strings.
@@ -26,9 +27,32 @@ def move(my_history, their_history, my_score, their_score):
     # Analyze my_history and their_history and/or my_score and their_score.
     # Decide whether to return 'c' or 'b'.
     
-    return 'c'
+    f = 0
+    if f >= 99:
+        return 'b'
+    if len(my_history)== 0:
+        a= random.choice(['c','b'])
+        f=f+1        
+        return a
+    if my_history[-1:]=='c':
+        f=f+1
+        return 'c'  
+    if my_history[-1:]=='b':
+        f=f+1
+        return 'b'  
+    if their_history[-2:]=='cc':
+        f=f+1
+        return 'c'            
+    if their_history[-2:]=='cb':
+        f=f+1
+        return 'b'  
+    if their_history[-2:]=='bc':
+        f=f+1
+        return 'c'  
+    if their_history[-2:]=='bb':
+        f=f+1
+        return 'b'  
 
-    
 def test_move(my_history, their_history, my_score, their_score, result):
     '''calls move(my_history, their_history, my_score, their_score)
     from this module. Prints error if return value != result.
@@ -45,7 +69,7 @@ def test_move(my_history, their_history, my_score, their_score, result):
             " and should have returned '" + result + "'")
         return False
 
-if __name__ == '__main__':
+'''if __name__ == '__main__':
      
     # Test 1: Betray on first move.
     if test_move(my_history='',
@@ -64,5 +88,17 @@ if __name__ == '__main__':
               # 300 to me and -750 to them. This test will pass if and only if
               # move('bbb', 'ccc', 0, 0) returns 'b'.
               my_score=0, 
-              their_score=0,
-              result='b')             
+              their_score=0,result='b')     '''        
+              
+              
+              
+
+    
+                
+                
+                
+                
+                
+                
+                
+                
