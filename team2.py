@@ -50,6 +50,7 @@ if __name__ == '__main__':
     # Test 1: Betray on first move.
     if test_move(my_history='',
               their_history='', 
+
               my_score=0,
               their_score=0,
               result='b'):
@@ -66,3 +67,8 @@ if __name__ == '__main__':
               my_score=0, 
               their_score=0,
               result='b')             
+    def betray; (b)
+    def collude: (c)
+    
+if input == 'c'
+print "you colluded"
