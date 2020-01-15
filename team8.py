@@ -40,8 +40,8 @@ def move(my_history, their_history, my_score, their_score):
         return 'c'
     if 'b' in my_history[-1:] and 'b' in their_history[-1:]:
         return 'b'
-        
-    return 'c'
+    else:
+        return 'c'
 
     
 def test_move(my_history, their_history, my_score, their_score, result):
