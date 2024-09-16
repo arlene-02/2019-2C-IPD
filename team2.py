@@ -6,7 +6,7 @@
 #     move: A function that returns 'c' or 'b'
 ####
 
-team_name = 'The name the team gives to itself' # Only 10 chars displayed.
+team_name = 'Tronald Dumb' # Only 10 chars displayed.
 strategy_name = 'The name the team gives to this strategy'
 strategy_description = 'How does this strategy decide?'
     
@@ -50,10 +50,11 @@ if __name__ == '__main__':
     # Test 1: Betray on first move.
     if test_move(my_history='',
               their_history='', 
+
               my_score=0,
               their_score=0,
               result='b'):
-         print 'Test passed'
+         print ('Test passed')
      # Test 2: Continue betraying if they collude despite being betrayed.
     test_move(my_history='bbb',
               their_history='ccc', 
@@ -66,3 +67,8 @@ if __name__ == '__main__':
               my_score=0, 
               their_score=0,
               result='b')             
+    def betray; (b)
+    def collude: (c)
+    
+if input == 'c'
+print "you colluded"
